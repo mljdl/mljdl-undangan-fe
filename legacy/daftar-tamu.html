@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daftar Tamu · The Wedding of Rizki &amp; Fadia</title>
+<meta name="description" content="Daftar tamu undangan pernikahan Rizki & Fadia dengan link personalisasi" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream:        #fdf6ee;
+  --cream-warm:   #f9ebdd;
+  --peach-soft:   #f5d9c4;
+  --peach:        #e8b095;
+  --rose-dust:    #c97862;
+  --terracotta:   #a85a48;
+  --brown-deep:   #6b3a2c;
+  --brown-ink:    #3d1f15;
+  --gold:         #b8915a;
+  --gold-light:   #d4b27a;
+  --leaf-green:   #8a8a5b;
+  --shadow:       rgba(107, 58, 44, 0.12);
+  --shadow-soft:  rgba(107, 58, 44, 0.06);
+  --shadow-deep:  rgba(107, 58, 44, 0.22);
+
+  --font-display: 'Italiana', serif;
+  --font-serif:   'Cormorant Garamond', serif;
+  --font-script:  'Tangerine', cursive;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+*::selection { background: var(--rose-dust); color: var(--cream); }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-serif);
+  background: var(--cream);
+  color: var(--brown-ink);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 10% 5%, rgba(232, 176, 149, 0.35) 0%, transparent 45%),
+    radial-gradient(ellipse at 90% 95%, rgba(201, 120, 98, 0.25) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+.page-header {
+  text-align: center;
+  padding: clamp(3rem, 8vw, 5rem) 1.5rem clamp(2rem, 5vw, 3rem);
+  border-bottom: 1px solid rgba(184, 145, 90, 0.2);
+  position: relative;
+}
+
+.page-header::before,
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  width: 80px;
+  height: 1px;
+  background: var(--gold);
+}
+.page-header::before { left: 50%; transform: translateX(-50%) translateY(0); width: 6px; height: 6px; border-radius: 50%; bottom: -3.5px; background: var(--gold); }
+
+.page-header__eyebrow {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 1.25rem;
+}
+
+.page-header__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 400;
+  color: var(--brown-deep);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.page-header__couple {
+  font-family: var(--font-script);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--rose-dust);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.page-header__date {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--brown-deep);
+  opacity: 0.7;
+}
+
+/* ==========================================================
+   STATS BAR
+   ========================================================== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.stats__item {
+  background: rgba(249, 235, 221, 0.5);
+  border: 1px solid rgba(184, 145, 90, 0.2);
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.stats__num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--terracotta);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.stats__label {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--brown-deep);
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================
+   TOOLBAR (search + add)
+   ========================================================== */
+.toolbar {
+  max-width: 1100px;
+  margin: 2.5rem auto 1.5rem;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  min-width: 240px;
+  max-width: 420px;
+}
+
+.search-box input {
+  width: 100%;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  padding: 0.85rem 1rem 0.85rem 2.75rem;
+  background: var(--cream-warm);
+  border: 1px solid rgba(184, 145, 90, 0.3);
+  border-radius: 0;
+  color: var(--brown-ink);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-box input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(184, 145, 90, 0.15);
+}
+.search-box input::placeholder {
+  color: var(--brown-deep);
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.search-box__icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--terracotta);
+  pointer-events: none;
+}
+
+.btn {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  padding: 0.85rem 1.5rem;
+  border: 1px solid var(--terracotta);
+  background: transparent;
+  color: var(--terracotta);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.btn:hover {
+  background: var(--terracotta);
+  color: var(--cream);
+}
+.btn--primary {
+  background: var(--terracotta);
+  color: var(--cream);
+}
+.btn--primary:hover {
+  background: var(--brown-deep);
+  border-color: var(--brown-deep);
+}
+
+/* ==========================================================
+   GUEST GRID
+   ========================================================== */
+.guest-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.guest-card {
+  background: linear-gradient(180deg, var(--cream-warm) 0%, var(--cream) 100%);
+  border: 1px solid rgba(184, 145, 90, 0.25);
+  padding: 1.5rem 1.5rem 1.25rem;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.guest-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--peach) 0%, var(--terracotta) 100%);
+}
+
+.guest-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px var(--shadow);
+}
+
+.guest-card__num {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  position: absolute;
+  top: 1.25rem;
+  left: 2rem;
+  opacity: 0.8;
+}
+
+/* Top-right action menu (edit/delete) */
+.guest-card__menu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.25rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.guest-card:hover .guest-card__menu,
+.guest-card__menu:focus-within {
+  opacity: 1;
+}
+@media (hover: none) {
+  /* On touch devices always show */
+  .guest-card__menu { opacity: 0.7; }
+}
+
+.menu-btn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(253, 246, 238, 0.8);
+  border: 1px solid rgba(184, 145, 90, 0.3);
+  color: var(--brown-deep);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  border-radius: 4px;
+}
+.menu-btn:hover {
+  background: var(--brown-deep);
+  color: var(--cream);
+  border-color: var(--brown-deep);
+}
+.menu-btn--delete:hover {
+  background: #b8424a;
+  border-color: #b8424a;
+  color: white;
+}
+
+.guest-card__greeting {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--brown-deep);
+  opacity: 0.6;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  margin-top: 1.5rem;
+}
+
+.guest-card__name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--brown-deep);
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+  word-break: break-word;
+  padding-right: 2rem;
+}
+
+.guest-card__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--brown-deep);
+  background: rgba(232, 176, 149, 0.25);
+  padding: 0.35rem 0.7rem;
+  margin-bottom: 0.85rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.guest-card__phone svg {
+  color: var(--terracotta);
+  flex-shrink: 0;
+}
+.guest-card__phone.is-empty {
+  color: var(--brown-deep);
+  background: transparent;
+  border: 1px dashed rgba(184, 145, 90, 0.4);
+  font-style: italic;
+  opacity: 0.7;
+}
+.guest-card__phone.is-empty svg {
+  opacity: 0.5;
+}
+
+.guest-card__link {
+  display: block;
+  font-family: 'Courier New', monospace;
+  font-size: 0.78rem;
+  color: var(--brown-deep);
+  background: rgba(245, 217, 196, 0.4);
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 1rem;
+  border-left: 2px solid var(--gold);
+  word-break: break-all;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.guest-card__link:hover {
+  background: rgba(245, 217, 196, 0.7);
+}
+
+.guest-card__actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid rgba(184, 145, 90, 0.4);
+  background: transparent;
+  color: var(--brown-deep);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.action-btn:hover {
+  background: var(--brown-deep);
+  color: var(--cream);
+  border-color: var(--brown-deep);
+}
+.action-btn--wa {
+  border-color: #25d366;
+  color: #1a8b48;
+}
+.action-btn--wa:hover {
+  background: #25d366;
+  color: white;
+  border-color: #25d366;
+}
+.action-btn--wa.is-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: rgba(184, 145, 90, 0.3);
+  color: var(--brown-deep);
+}
+.action-btn--wa.is-disabled:hover {
+  background: transparent;
+  color: var(--brown-deep);
+  border-color: rgba(184, 145, 90, 0.3);
+}
+.action-btn--preview {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+}
+.action-btn--preview:hover {
+  background: var(--terracotta);
+  color: var(--cream);
+  border-color: var(--terracotta);
+}
+
+.action-btn svg {
+  flex-shrink: 0;
+}
+
+/* ==========================================================
+   ADD GUEST FORM
+   ========================================================== */
+.add-form {
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  background: rgba(249, 235, 221, 0.4);
+  border: 1px dashed rgba(184, 145, 90, 0.4);
+  display: none;
+}
+.add-form.is-open {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.add-form__title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--brown-deep);
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.add-form__row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.add-form__row input {
+  flex: 1;
+  min-width: 200px;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--cream);
+  border: 1px solid rgba(184, 145, 90, 0.3);
+  color: var(--brown-ink);
+  outline: none;
+}
+.add-form__row input:focus {
+  border-color: var(--gold);
+}
+
+.add-form__hint {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--brown-deep);
+  opacity: 0.65;
+  margin-top: 0.7rem;
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================
+   TOAST
+   ========================================================== */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(150%);
+  background: var(--brown-deep);
+  color: var(--cream);
+  padding: 0.85rem 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 8px 24px var(--shadow-deep);
+  z-index: 1000;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.toast.is-visible {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================================
+   EDIT MODE (inline within card)
+   ========================================================== */
+.guest-card.is-editing .guest-card__greeting,
+.guest-card.is-editing .guest-card__name,
+.guest-card.is-editing .guest-card__phone,
+.guest-card.is-editing .guest-card__link,
+.guest-card.is-editing .guest-card__actions,
+.guest-card.is-editing .guest-card__num,
+.guest-card.is-editing .guest-card__menu {
+  display: none;
+}
+
+.guest-card__edit {
+  display: none;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.guest-card.is-editing .guest-card__edit {
+  display: flex;
+}
+
+.guest-card__edit label {
+  font-style: italic;
+  font-size: 0.75rem;
+  color: var(--brown-deep);
+  opacity: 0.7;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: -0.4rem;
+}
+
+.guest-card__edit input {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  padding: 0.6rem 0.8rem;
+  background: var(--cream);
+  border: 1px solid rgba(184, 145, 90, 0.4);
+  color: var(--brown-ink);
+  outline: none;
+  width: 100%;
+}
+.guest-card__edit input:focus {
+  border-color: var(--gold);
+}
+
+.guest-card__edit-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+/* ==========================================================
+   CONFIRMATION MODAL
+   ========================================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(61, 31, 21, 0.55);
+  backdrop-filter: blur(3px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease;
+}
+.modal-backdrop.is-open { display: flex; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: var(--cream);
+  border: 1px solid var(--gold);
+  padding: 2rem 1.75rem 1.5rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(61, 31, 21, 0.4);
+  animation: modalIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(184, 66, 74, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #b8424a;
+  margin-bottom: 1rem;
+}
+
+.modal__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--brown-deep);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.03em;
+}
+
+.modal__msg {
+  font-size: 0.95rem;
+  color: var(--brown-deep);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.modal__guest-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--terracotta);
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 1.1rem;
+}
+
+.modal__actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.modal__btn {
+  flex: 1;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid;
+}
+.modal__btn--cancel {
+  background: transparent;
+  border-color: rgba(184, 145, 90, 0.4);
+  color: var(--brown-deep);
+}
+.modal__btn--cancel:hover {
+  background: var(--cream-warm);
+}
+.modal__btn--confirm {
+  background: #b8424a;
+  border-color: #b8424a;
+  color: white;
+}
+.modal__btn--confirm:hover {
+  background: #9a363d;
+  border-color: #9a363d;
+}
+
+/* ==========================================================
+   EMPTY STATE
+   ========================================================== */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--brown-deep);
+  opacity: 0.6;
+}
+.empty-state__icon {
+  font-family: var(--font-script);
+  font-size: 4rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.empty-state__text {
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+.page-footer {
+  text-align: center;
+  padding: 2rem 1.5rem 3rem;
+  border-top: 1px solid rgba(184, 145, 90, 0.2);
+  color: var(--brown-deep);
+  opacity: 0.7;
+  font-style: italic;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+@media (max-width: 600px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-box { max-width: 100%; }
+  .guest-grid {
+    grid-template-columns: 1fr;
+  }
+  .action-btn {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.4rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <p class="page-header__eyebrow">Daftar Tamu Undangan</p>
+  <h1 class="page-header__title">Manajemen Undangan</h1>
+  <p class="page-header__couple">Rizki &amp; Fadia</p>
+  <p class="page-header__date">13 · 06 · 2026</p>
+
+  <div class="stats">
+    <div class="stats__item">
+      <span class="stats__num" id="statTotal">0</span>
+      <span class="stats__label">Total Tamu</span>
+    </div>
+    <div class="stats__item">
+      <span class="stats__num" id="statShared">0</span>
+      <span class="stats__label">Sudah Dikirim</span>
+    </div>
+    <div class="stats__item">
+      <span class="stats__num" id="statPending">0</span>
+      <span class="stats__label">Belum Dikirim</span>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="search-box">
+    <svg class="search-box__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <input type="text" id="searchInput" placeholder="Cari nama tamu..." />
+  </div>
+
+  <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+    <button class="btn" id="exportBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Export CSV
+    </button>
+    <button class="btn btn--primary" id="addToggle">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+      Tambah Tamu
+    </button>
+  </div>
+</div>
+
+<div class="add-form" id="addForm">
+  <h3 class="add-form__title">Tambah Tamu Baru</h3>
+  <div class="add-form__row">
+    <input type="text" id="newGuestName" placeholder="Nama tamu (contoh: Bapak Andi Wijaya)" />
+    <input type="tel" id="newGuestPhone" placeholder="No. WhatsApp (contoh: 081234567890)" />
+    <button class="btn btn--primary" id="saveGuest">Simpan</button>
+    <button class="btn" id="cancelGuest">Batal</button>
+  </div>
+  <p class="add-form__hint">Nomor WA opsional. Format Indonesia (08...) atau internasional (+62...) keduanya bisa.</p>
+</div>
+
+<main class="guest-grid" id="guestGrid">
+  <!-- Guest cards inserted by JS -->
+</main>
+
+<footer class="page-footer">
+  <p>Halaman demo daftar tamu &middot; Rizki &amp; Fadia Wedding 2026</p>
+</footer>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal__icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="3 6 5 6 21 6"></polyline>
+        <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+        <path d="M10 11v6"></path>
+        <path d="M14 11v6"></path>
+        <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path>
+      </svg>
+    </div>
+    <h3 class="modal__title" id="modalTitle">Hapus Data Tamu?</h3>
+    <p class="modal__msg">
+      Data tamu di bawah ini akan dihapus permanen dari daftar.
+      <span class="modal__guest-name" id="modalGuestName"></span>
+    </p>
+    <div class="modal__actions">
+      <button class="modal__btn modal__btn--cancel" id="modalCancel">Batal</button>
+      <button class="modal__btn modal__btn--confirm" id="modalConfirm">Ya, Hapus</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 6 9 17 4 12"></polyline>
+  </svg>
+  <span id="toastMsg">Link berhasil disalin</span>
+</div>
+
+<script>
+// ==========================================================
+// CONFIG
+// ==========================================================
+const INVITATION_FILE = 'undangan-rizki-fadia.html';
+
+// Dummy data tamu (data yang biasa muncul di undangan Indonesia)
+const DUMMY_GUESTS = [
+  { id: 1,  name: 'Bapak Andi Wijaya & Keluarga',     phone: '081234567890', shared: true  },
+  { id: 2,  name: 'Ibu Sari Lestari',                 phone: '082145678901', shared: true  },
+  { id: 3,  name: 'Bapak H. Muhammad Yusuf, S.E.',    phone: '085712345678', shared: false },
+  { id: 4,  name: 'Ibu Hj. Ratna Kusumawati',         phone: '081398765432', shared: true  },
+  { id: 5,  name: 'Bapak & Ibu Bambang Sutrisno',     phone: '087823456789', shared: true  },
+  { id: 6,  name: 'Sdr. Reza Pratama',                phone: '089654321098', shared: false },
+  { id: 7,  name: 'Ibu Hj. Siti Aminah',              phone: '081567891234', shared: true  },
+  { id: 8,  name: 'Bapak Iwan Setiawan & Keluarga',   phone: '082234561789', shared: false },
+  { id: 9,  name: 'Sdri. Anisa Putri Maharani',       phone: '085987654321', shared: true  },
+  { id: 10, name: 'Bapak Drs. Hendra Gunawan, M.M.',  phone: '081876543210', shared: false },
+  { id: 11, name: 'Keluarga Besar Bapak Sumarno',     phone: '087712340987', shared: true  },
+  { id: 12, name: 'Ibu Dewi Anggraini, S.Pd.',        phone: '083812345678', shared: false }
+];
+
+// ==========================================================
+// STATE & UTILITIES
+// ==========================================================
+let guests = [...DUMMY_GUESTS];
+let nextId = 13;
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => [...document.querySelectorAll(s)];
+
+function buildLink(name) {
+  const baseUrl = window.location.href.replace(/\/[^/]*$/, '/') + INVITATION_FILE;
+  return baseUrl + '?to=' + encodeURIComponent(name);
+}
+
+// Normalize Indonesian phone numbers to international format (62...)
+// Accepts: 081234567890, 81234567890, +6281234567890, 6281234567890, 0812-3456-7890
+function normalizePhone(phone) {
+  if (!phone) return '';
+  let p = String(phone).replace(/[^\d+]/g, ''); // strip spaces, dashes, dots
+  if (p.startsWith('+')) p = p.slice(1);        // drop leading +
+  if (p.startsWith('0')) p = '62' + p.slice(1); // 0812... → 62812...
+  if (p.startsWith('8')) p = '62' + p;          // 812... → 62812...
+  return p;
+}
+
+// Pretty format for display: 62812... → +62 812-3456-7890
+function formatPhoneDisplay(phone) {
+  const norm = normalizePhone(phone);
+  if (!norm) return '';
+  if (norm.startsWith('62')) {
+    const rest = norm.slice(2);
+    // Indonesian mobile: 3-4-4 grouping (e.g. 812-3456-7890)
+    if (rest.length >= 10 && rest.length <= 13) {
+      const a = rest.slice(0, 3);
+      const b = rest.slice(3, 7);
+      const c = rest.slice(7);
+      return `+62 ${a}-${b}-${c}`;
+    }
+    return `+62 ${rest}`;
+  }
+  return '+' + norm;
+}
+
+function showToast(msg) {
+  const toast = $('#toast');
+  $('#toastMsg').textContent = msg;
+  toast.classList.add('is-visible');
+  setTimeout(() => toast.classList.remove('is-visible'), 2500);
+}
+
+function updateStats() {
+  $('#statTotal').textContent = guests.length;
+  $('#statShared').textContent = guests.filter(g => g.shared).length;
+  $('#statPending').textContent = guests.filter(g => !g.shared).length;
+}
+
+// ==========================================================
+// RENDER
+// ==========================================================
+function renderGuests(filter = '') {
+  const grid = $('#guestGrid');
+  const f = filter.toLowerCase().trim();
+  const filtered = f
+    ? guests.filter(g =>
+        g.name.toLowerCase().includes(f) ||
+        (g.phone && g.phone.includes(f.replace(/\D/g, '')))
+      )
+    : guests;
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state__icon">∅</div>
+        <p class="empty-state__text">${filter ? 'Tamu tidak ditemukan' : 'Belum ada tamu'}</p>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = filtered.map((g, i) => {
+    const link = buildLink(g.name);
+    const num = String(guests.indexOf(g) + 1).padStart(2, '0');
+    const hasPhone = g.phone && g.phone.trim().length > 0;
+    const phoneDisplay = hasPhone ? formatPhoneDisplay(g.phone) : 'Belum ada nomor';
+    return `
+      <article class="guest-card" data-id="${g.id}">
+        <span class="guest-card__num">N° ${num}</span>
+
+        <div class="guest-card__menu">
+          <button class="menu-btn menu-btn--edit" onclick="startEdit(${g.id})" title="Edit tamu" aria-label="Edit">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+            </svg>
+          </button>
+          <button class="menu-btn menu-btn--delete" onclick="askDelete(${g.id})" title="Hapus tamu" aria-label="Hapus">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+              <path d="M10 11v6"></path>
+              <path d="M14 11v6"></path>
+              <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path>
+            </svg>
+          </button>
+        </div>
+
+        <p class="guest-card__greeting">Kepada Yth.</p>
+        <h3 class="guest-card__name">${escapeHtml(g.name)}</h3>
+        <div class="guest-card__phone ${hasPhone ? '' : 'is-empty'}">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>${escapeHtml(phoneDisplay)}</span>
+        </div>
+        <a class="guest-card__link" href="${link}" target="_blank" rel="noopener">${link}</a>
+        <div class="guest-card__actions">
+          <button class="action-btn action-btn--preview" onclick="previewGuest('${escapeJs(g.name)}')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            Buka
+          </button>
+          <button class="action-btn" onclick="copyLink('${escapeJs(g.name)}')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            Salin
+          </button>
+          <button class="action-btn action-btn--wa ${hasPhone ? '' : 'is-disabled'}" onclick="sendWA(${g.id})" ${hasPhone ? '' : 'title="Tambahkan nomor WA dulu"'}>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            WhatsApp
+          </button>
+        </div>
+
+        <div class="guest-card__edit">
+          <label>Nama Tamu</label>
+          <input type="text" class="edit-name" value="${escapeAttr(g.name)}" placeholder="Nama tamu" />
+          <label>No. WhatsApp</label>
+          <input type="tel" class="edit-phone" value="${escapeAttr(g.phone || '')}" placeholder="08xx atau +62xx (opsional)" />
+          <div class="guest-card__edit-actions">
+            <button class="btn btn--primary" onclick="saveEdit(${g.id})">Simpan</button>
+            <button class="btn" onclick="cancelEdit(${g.id})">Batal</button>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+function escapeHtml(str) {
+  return str.replace(/[&<>"']/g, m => ({
+    '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+  })[m]);
+}
+function escapeAttr(str) {
+  return String(str || '').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+}
+function escapeJs(str) {
+  return str.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+}
+
+// ==========================================================
+// ACTIONS
+// ==========================================================
+window.previewGuest = function(name) {
+  const link = buildLink(name);
+  window.open(link, '_blank');
+};
+
+window.copyLink = async function(name) {
+  const link = buildLink(name);
+  try {
+    await navigator.clipboard.writeText(link);
+    showToast('Link berhasil disalin');
+  } catch (err) {
+    // fallback
+    const ta = document.createElement('textarea');
+    ta.value = link;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('Link berhasil disalin');
+  }
+};
+
+window.sendWA = function(id) {
+  const guest = guests.find(g => g.id === id);
+  if (!guest) return;
+
+  if (!guest.phone || !guest.phone.trim()) {
+    showToast('Tamu ini belum punya nomor WA');
+    return;
+  }
+
+  const normalized = normalizePhone(guest.phone);
+  const link = buildLink(guest.name);
+  const message =
+`Assalamualaikum Wr. Wb.
+
+Kepada Yth.
+${guest.name}
+
+Tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir di acara pernikahan kami:
+
+*Mochammad Rizki, S.Pd*
+&
+*Nurul Fadia, S.S.I*
+
+Sabtu, 13 Juni 2026
+
+Berikut link undangan digital:
+${link}
+
+Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
+
+Terima kasih.
+
+Wassalamualaikum Wr. Wb.`;
+
+  // mark as shared
+  guest.shared = true;
+  updateStats();
+
+  // Send directly to guest's number
+  const waUrl = `https://wa.me/${normalized}?text=${encodeURIComponent(message)}`;
+  window.open(waUrl, '_blank');
+};
+
+// ==========================================================
+// EDIT
+// ==========================================================
+window.startEdit = function(id) {
+  const card = document.querySelector(`.guest-card[data-id="${id}"]`);
+  if (!card) return;
+  card.classList.add('is-editing');
+  // focus first input
+  const nameInput = card.querySelector('.edit-name');
+  if (nameInput) {
+    nameInput.focus();
+    nameInput.select();
+  }
+};
+
+window.cancelEdit = function(id) {
+  const card = document.querySelector(`.guest-card[data-id="${id}"]`);
+  if (card) card.classList.remove('is-editing');
+};
+
+window.saveEdit = function(id) {
+  const card = document.querySelector(`.guest-card[data-id="${id}"]`);
+  if (!card) return;
+
+  const newName = card.querySelector('.edit-name').value.trim();
+  const newPhone = card.querySelector('.edit-phone').value.trim();
+
+  if (!newName) {
+    showToast('Nama tamu tidak boleh kosong');
+    return;
+  }
+
+  const guest = guests.find(g => g.id === id);
+  if (!guest) return;
+
+  guest.name = newName;
+  guest.phone = newPhone;
+
+  renderGuests($('#searchInput').value);
+  showToast('Data tamu berhasil diperbarui');
+};
+
+// ==========================================================
+// DELETE (with confirmation)
+// ==========================================================
+let deleteTargetId = null;
+
+window.askDelete = function(id) {
+  const guest = guests.find(g => g.id === id);
+  if (!guest) return;
+  deleteTargetId = id;
+  $('#modalGuestName').textContent = guest.name;
+  $('#modalBackdrop').classList.add('is-open');
+};
+
+function closeModal() {
+  $('#modalBackdrop').classList.remove('is-open');
+  deleteTargetId = null;
+}
+
+$('#modalCancel').addEventListener('click', closeModal);
+
+$('#modalConfirm').addEventListener('click', () => {
+  if (deleteTargetId === null) return;
+  const guest = guests.find(g => g.id === deleteTargetId);
+  const name = guest ? guest.name : '';
+  guests = guests.filter(g => g.id !== deleteTargetId);
+  closeModal();
+  updateStats();
+  renderGuests($('#searchInput').value);
+  showToast(`"${name}" telah dihapus`);
+});
+
+// Close modal when clicking backdrop or pressing Escape
+$('#modalBackdrop').addEventListener('click', (e) => {
+  if (e.target === $('#modalBackdrop')) closeModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && $('#modalBackdrop').classList.contains('is-open')) {
+    closeModal();
+  }
+});
+
+// ==========================================================
+// SEARCH
+// ==========================================================
+$('#searchInput').addEventListener('input', (e) => {
+  renderGuests(e.target.value);
+});
+
+// ==========================================================
+// ADD GUEST
+// ==========================================================
+$('#addToggle').addEventListener('click', () => {
+  $('#addForm').classList.toggle('is-open');
+  if ($('#addForm').classList.contains('is-open')) {
+    $('#newGuestName').focus();
+  }
+});
+
+$('#cancelGuest').addEventListener('click', () => {
+  $('#addForm').classList.remove('is-open');
+  $('#newGuestName').value = '';
+});
+
+$('#saveGuest').addEventListener('click', () => {
+  const name = $('#newGuestName').value.trim();
+  const phone = $('#newGuestPhone').value.trim();
+  if (!name) {
+    showToast('Nama tamu tidak boleh kosong');
+    return;
+  }
+  guests.unshift({ id: nextId++, name, phone, shared: false });
+  $('#newGuestName').value = '';
+  $('#newGuestPhone').value = '';
+  $('#addForm').classList.remove('is-open');
+  updateStats();
+  renderGuests($('#searchInput').value);
+  showToast('Tamu berhasil ditambahkan');
+});
+
+$('#newGuestName').addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') $('#newGuestPhone').focus();
+});
+$('#newGuestPhone').addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') $('#saveGuest').click();
+});
+
+// ==========================================================
+// EXPORT CSV
+// ==========================================================
+$('#exportBtn').addEventListener('click', () => {
+  const rows = [
+    ['No', 'Nama Tamu', 'No. WhatsApp', 'Link Undangan', 'Status'],
+    ...guests.map((g, i) => [
+      i + 1,
+      g.name,
+      g.phone ? formatPhoneDisplay(g.phone) : '-',
+      buildLink(g.name),
+      g.shared ? 'Sudah Dikirim' : 'Belum Dikirim'
+    ])
+  ];
+  const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n');
+  const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'daftar-tamu-rizki-fadia.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('CSV berhasil diunduh');
+});
+
+// ==========================================================
+// INIT
+// ==========================================================
+updateStats();
+renderGuests();
+</script>
+
+</body>
+</html>
