@@ -1,0 +1,17 @@
+name: mljdl-invitation-dev
+
+services:
+  # DEVELOPMENT STACK
+  # Usage: docker compose -f deployments/development/docker-compose.yml up -d
+  # Purpose: Dev server deploy. CI writes .env fresh on every deploy.
+  web:
+    image: ghcr.io/${GITHUB_REPOSITORY}:${IMAGE_TAG:-dev}
+    container_name: mljdl-invitation-wedding
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    env_file:
+      - path: .env
+        required: false
