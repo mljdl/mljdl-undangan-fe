@@ -5,13 +5,14 @@ import { DaftarTamuPage, UndanganPage } from "./pages";
 
 export function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/rizki-nadia/">
       <div className="min-h-screen bg-cream text-brown-ink">
         {/* fade-up scroll observer */}
         <AnimationObserver />
 
         <Routes>
           <Route path="/" element={<UndanganPage />} />
+
           <Route path="/daftar-tamu" element={<DaftarTamuPage />} />
         </Routes>
 
