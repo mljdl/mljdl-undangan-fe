@@ -26,19 +26,29 @@ export const UndanganPage = () => {
   return (
     <>
       <Preloader />
+
       <CoverSection onOpen={handleOpen} />
 
       {opened && (
         <main id="main">
           <PembukaanSection />
+
           <AyatSection />
+
           <HadithSection />
+
           <MempelaiSection />
+          
           <CountdownSection />
+          
           <AcaraSection />
+          
           <LokasiSection />
+          
           <RsvpSection />
+          
           <AmplopSection />
+          
           <PenutupSection />
         </main>
       )}

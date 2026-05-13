@@ -6,9 +6,6 @@ import { useEffect } from 'react';
  */
 export const AnimationObserver = () => {
   useEffect(() => {
-    const elements = document.querySelectorAll<HTMLElement>('.reveal');
-    if (!elements.length) return;
-
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -21,9 +18,41 @@ export const AnimationObserver = () => {
       { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
     );
 
-    elements.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  });
+    const observed = new WeakSet<HTMLElement>();
+
+    const observeElement = (el: HTMLElement) => {
+      if (observed.has(el)) return;
+      observed.add(el);
+      io.observe(el);
+    };
+
+    const observeReveals = (root: ParentNode) => {
+      if (root instanceof HTMLElement && root.matches('.reveal')) {
+        observeElement(root);
+      }
+
+      root.querySelectorAll?.<HTMLElement>('.reveal').forEach(observeElement);
+    };
+
+    observeReveals(document);
+
+    const mo = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node instanceof HTMLElement) {
+            observeReveals(node);
+          }
+        });
+      });
+    });
+
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      mo.disconnect();
+      io.disconnect();
+    };
+  }, []);
 
   return null;
 };
