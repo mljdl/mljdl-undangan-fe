@@ -1,6 +1,7 @@
 import { Calendar } from 'lucide-react';
 import { WEDDING_DATE_ISO } from '../data/wedding';
 import { useCountdown } from '../hooks/useCountdown';
+import { FloralDecor } from './FloralDecor';
 
 const Cell = ({ value, label }: { value: number; label: string }) => (
   <div className="flex flex-col items-center bg-cream/70 backdrop-blur-sm border border-gold/30 rounded-2xl px-4 py-5 md:px-6 md:py-6 shadow-soft min-w-[72px] md:min-w-[88px]">
@@ -32,8 +33,9 @@ export const CountdownSection = () => {
   return (
     <section
       id="countdown"
-      className="wedding-section bg-gradient-to-b from-cream-warm/30 via-transparent to-cream-warm/30"
+      className="wedding-section bg-gradient-to-b from-cream-warm/30 via-transparent to-cream-warm/30 relative"
     >
+      <FloralDecor variant="top" opacity={0.4} floralSet="1234" />
       <div className="wedding-section__inner">
         <div className="reveal">
           <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent mb-6" />

@@ -1,8 +1,10 @@
 import { HADITHS } from '../data/scripture';
+import { FloralDecor } from './FloralDecor';
 
 export const HadithSection = () => {
   return (
-    <section id="hadith" className="wedding-section">
+    <section id="hadith" className="wedding-section relative">
+      <FloralDecor variant="diagonal" opacity={0.42} floralSet="2424" />
       <div className="wedding-section__inner">
         <div className="reveal">
           <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent mb-6" />

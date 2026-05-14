@@ -1,13 +1,14 @@
 import { Send } from 'lucide-react';
 import { useState } from 'react';
 import type { Ucapan } from '../types';
+import { FloralDecor } from './FloralDecor';
 
 type Attend = 'hadir' | 'ragu' | 'tidak';
 
 const ATTEND_LABEL: Record<Attend, string> = {
-  hadir: 'Hadir',
-  ragu: 'Ragu-ragu',
-  tidak: 'Tidak Hadir',
+  hadir: 'Insyaallah Hadir',
+  ragu: 'Belum Pasti Hadir',
+  tidak: 'Tidak Bisa Hadir',
 };
 
 const ATTEND_COLOR: Record<Attend, string> = {
@@ -51,7 +52,8 @@ export const RsvpSection = () => {
   };
 
   return (
-    <section id="rsvp" className="wedding-section">
+    <section id="rsvp" className="wedding-section relative">
+      <FloralDecor variant="top" opacity={0.42} floralSet="2424" />
       <div className="wedding-section__inner max-w-2xl">
         <div className="reveal">
           <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent mb-6" />

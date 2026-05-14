@@ -1,9 +1,14 @@
+import { FloralDecor } from './FloralDecor'
+import { Sparkles } from './Sparkles'
+
 export const PenutupSection = () => {
   return (
     <section
       id="penutup"
-      className="wedding-section bg-gradient-to-b from-transparent to-cream-warm/60"
+      className="wedding-section bg-gradient-to-b from-transparent to-cream-warm/60 relative"
     >
+      <FloralDecor variant="corners" opacity={0.6} floralSet="1234" />
+      <Sparkles count={10} color="#b8915a" />
       <div className="wedding-section__inner">
         <div className="reveal mx-auto h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent" />
 

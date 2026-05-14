@@ -1,8 +1,10 @@
 import { AYAT_AR_RUM } from '../data/scripture';
+import { FloralDecor } from './FloralDecor';
 
 export const AyatSection = () => {
   return (
-    <section id="ayat" className="wedding-section bg-gradient-to-b from-transparent to-cream-warm/40">
+    <section id="ayat" className="wedding-section bg-gradient-to-b from-transparent to-cream-warm/40 relative">
+      <FloralDecor variant="frame" opacity={0.4} />
       <div className="wedding-section__inner">
         <div className="reveal">
           <div className="eyebrow">{AYAT_AR_RUM.cite}</div>

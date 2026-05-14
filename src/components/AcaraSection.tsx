@@ -1,6 +1,7 @@
 import { Heart, Sparkles } from 'lucide-react';
 import { EVENTS } from '../data/wedding';
 import type { EventDetail } from '../types';
+import { FloralDecor } from './FloralDecor';
 
 const ICONS = [Heart, Sparkles];
 
@@ -34,7 +35,8 @@ const EventCard = ({ event, idx }: { event: EventDetail; idx: number }) => {
 
 export const AcaraSection = () => {
   return (
-    <section id="acara" className="wedding-section">
+    <section id="acara" className="wedding-section relative">
+      <FloralDecor variant="corners" opacity={0.45} floralSet="2424" />
       <div className="wedding-section__inner max-w-4xl">
         <div className="reveal">
           <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent mb-6" />

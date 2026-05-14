@@ -1,6 +1,7 @@
 import { Copy } from 'lucide-react';
 import { useState } from 'react';
 import { BANK_ACCOUNTS } from '../data/bank';
+import { FloralDecor } from './FloralDecor';
 import { Toast } from './Toast';
 
 export const AmplopSection = () => {
@@ -18,8 +19,9 @@ export const AmplopSection = () => {
   return (
     <section
       id="amplop"
-      className="wedding-section bg-gradient-to-b from-cream-warm/40 to-transparent"
+      className="wedding-section bg-gradient-to-b from-cream-warm/40 to-transparent relative"
     >
+      <FloralDecor variant="diagonal" opacity={0.4} floralSet="1313" />
       <div className="wedding-section__inner max-w-3xl">
         <div className="reveal">
           <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent mb-6" />

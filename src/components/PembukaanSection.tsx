@@ -1,6 +1,9 @@
+import { FloralDecor } from './FloralDecor'
+
 export const PembukaanSection = () => {
   return (
-    <section id="pembukaan" className="wedding-section">
+    <section id="pembukaan" className="wedding-section relative">
+      <FloralDecor variant="top" opacity={0.45} floralSet="2424" />
       <div className="wedding-section__inner">
         <div className="reveal">
           <div className="eyebrow">In The Name of Allah</div>
