@@ -32,12 +32,12 @@ export const CmsLayout = () => {
   const { user } = useAuth()
 
   return (
-    <div className="min-h-screen flex">
+    <div className="glass-app-bg min-h-screen flex">
       {/* Sidebar */}
-      <aside className="w-64 bg-cream-soft border-r-2 border-ink flex flex-col">
-        <div className="px-5 py-5 border-b-2 border-ink">
+      <aside className="w-64 bg-white/45 backdrop-blur-2xl border-r border-white/50 flex flex-col">
+        <div className="px-5 py-5 border-b border-white/40">
           <Link to="/" className="flex items-center gap-2 font-display font-extrabold text-lg">
-            <span className="w-8 h-8 rounded-lg bg-accent text-cream border-2 border-ink flex items-center justify-center text-sm shadow-brutal-sm">
+            <span className="w-8 h-8 rounded-xl bg-accent/90 text-cream border border-white/40 flex items-center justify-center text-sm shadow-[0_6px_18px_rgba(255,139,94,0.35)]">
               U
             </span>
             <span>MLJDL Undgn</span>
@@ -52,10 +52,10 @@ export const CmsLayout = () => {
               to={item.to}
               className={({ isActive }) =>
                 [
-                  'flex items-center gap-3 px-3 py-2.5 rounded-lg font-semibold text-sm transition-all',
+                  'flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-sm transition-all',
                   isActive
-                    ? 'bg-accent text-cream border-2 border-ink shadow-brutal-sm'
-                    : 'text-ink-soft hover:bg-cream-deep hover:text-ink',
+                    ? 'bg-accent/90 text-cream shadow-[0_4px_14px_rgba(255,139,94,0.3)]'
+                    : 'text-ink-soft hover:bg-white/55 hover:text-ink',
                 ].join(' ')
               }
             >
@@ -65,10 +65,10 @@ export const CmsLayout = () => {
           ))}
         </nav>
 
-        <div className="px-3 py-3 border-t-2 border-ink">
+        <div className="px-3 py-3 border-t border-white/40">
           <Link
             to="/"
-            className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold uppercase tracking-widest text-ink-soft hover:bg-cream-deep"
+            className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold uppercase tracking-widest text-ink-soft hover:bg-white/55"
           >
             <Home size={14} />
             Kembali ke Public
@@ -78,17 +78,17 @@ export const CmsLayout = () => {
 
       {/* Main column */}
       <div className="flex-1 flex flex-col min-w-0">
-        <header className="sticky top-0 z-30 bg-cream/95 backdrop-blur-md border-b-2 border-ink">
+        <header className="sticky top-0 z-30 bg-white/40 backdrop-blur-xl border-b border-white/50">
           <div className="px-6 py-3 flex items-center justify-end gap-2">
             <button
               type="button"
-              className="w-9 h-9 rounded-lg border-2 border-ink bg-cream-soft hover:bg-cream-deep flex items-center justify-center"
+              className="w-9 h-9 rounded-xl border border-white/50 bg-white/50 backdrop-blur-md hover:bg-white/70 flex items-center justify-center transition-colors"
               aria-label="Notifications"
             >
               <Bell size={16} />
             </button>
-            <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-lg bg-cream-soft border-2 border-ink">
-              <div className="w-7 h-7 rounded-full bg-accent text-cream font-bold flex items-center justify-center text-xs">
+            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/50 backdrop-blur-md border border-white/50">
+              <div className="w-7 h-7 rounded-full bg-accent/90 text-cream font-bold flex items-center justify-center text-xs">
                 {(user?.name ?? 'U')[0]}
               </div>
               <span className="text-sm font-semibold max-w-[160px] truncate">{user?.name}</span>

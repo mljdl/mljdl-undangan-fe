@@ -15,11 +15,11 @@ export const PublicLayout = () => {
   const goToDashboard = hasAnyRole(ADMIN_ROLES) ? '/admin/dashboard' : '/cms/dashboard'
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <header className="sticky top-0 z-40 bg-cream/95 backdrop-blur-md border-b-2 border-ink">
+    <div className="glass-app-bg min-h-screen flex flex-col">
+      <header className="sticky top-0 z-40 bg-white/40 backdrop-blur-xl border-b border-white/50">
         <nav className="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2 font-display font-extrabold text-xl">
-            <span className="w-9 h-9 rounded-lg bg-accent text-cream border-2 border-ink flex items-center justify-center shadow-brutal-sm">
+            <span className="w-9 h-9 rounded-xl bg-accent/90 text-cream border border-white/40 flex items-center justify-center shadow-[0_6px_18px_rgba(255,139,94,0.35)]">
               <Heart size={16} strokeWidth={2.5} />
             </span>
             <span className="hidden sm:inline">MLJDL Undangan</span>
@@ -33,8 +33,10 @@ export const PublicLayout = () => {
                 end={link.to === '/'}
                 className={({ isActive }) =>
                   [
-                    'px-4 py-2 rounded-lg font-bold text-sm tracking-wide transition-colors',
-                    isActive ? 'bg-accent text-cream border-2 border-ink' : 'hover:bg-cream-soft',
+                    'px-4 py-2 rounded-xl font-bold text-sm tracking-wide transition-all',
+                    isActive
+                      ? 'bg-accent/90 text-cream shadow-[0_4px_14px_rgba(255,139,94,0.3)]'
+                      : 'text-ink hover:bg-white/50',
                   ].join(' ')
                 }
               >

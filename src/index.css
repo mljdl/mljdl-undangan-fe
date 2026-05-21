@@ -12,8 +12,9 @@
     -webkit-text-size-adjust: 100%;
   }
   body {
-    @apply font-sans text-ink bg-cream antialiased min-h-screen;
+    @apply font-sans text-ink antialiased min-h-screen;
     line-height: 1.6;
+    background: #fbf6ef;
   }
   ::selection {
     @apply bg-accent text-cream;
@@ -26,24 +27,62 @@
 }
 
 @layer components {
-  /* ── Neobrutalism soft (CMS, admin, discovery) ────────────── */
+  /* ── Glassmorphism app background (CMS, admin, discovery chrome) ── */
+  .glass-app-bg {
+    background:
+      radial-gradient(ellipse 70% 55% at 8% -5%, rgba(255, 209, 102, 0.30), transparent 60%),
+      radial-gradient(ellipse 65% 55% at 102% 8%, rgba(255, 139, 94, 0.22), transparent 55%),
+      radial-gradient(ellipse 80% 60% at 50% 108%, rgba(109, 180, 212, 0.18), transparent 62%),
+      linear-gradient(160deg, #fdfaf4 0%, #f7f0e6 100%);
+    background-attachment: fixed;
+  }
+
+  /* ── Glassmorphism surfaces (CMS, admin, discovery) ──────────── */
   .brutal-card {
-    @apply bg-cream-soft border-2 border-ink rounded-2xl shadow-brutal;
+    background: rgba(255, 255, 255, 0.55);
+    -webkit-backdrop-filter: blur(20px) saturate(1.25);
+    backdrop-filter: blur(20px) saturate(1.25);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 1.25rem;
+    box-shadow:
+      0 8px 32px rgba(42, 38, 34, 0.10),
+      inset 0 1px 0 rgba(255, 255, 255, 0.55);
   }
   .brutal-button {
-    @apply inline-flex items-center justify-center gap-2 border-2 border-ink rounded-lg px-6 py-3 font-brutal tracking-wide shadow-brutal transition-all duration-150 hover:-translate-y-0.5 hover:shadow-brutal-lg active:translate-y-0 active:shadow-brutal-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-cream disabled:opacity-50 disabled:pointer-events-none;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-sans font-semibold tracking-wide transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent disabled:opacity-50 disabled:pointer-events-none;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0 6px 20px rgba(42, 38, 34, 0.10);
+  }
+  .brutal-button:hover {
+    box-shadow: 0 10px 28px rgba(42, 38, 34, 0.16);
   }
   .brutal-input {
-    @apply w-full px-4 py-3 border-2 border-ink rounded-lg bg-cream-soft text-ink placeholder:text-ink-soft/60 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-cream;
+    @apply w-full px-4 py-3 rounded-xl text-ink placeholder:text-ink-soft/50 transition-all duration-200;
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+  .brutal-input:focus {
+    outline: none;
+    border-color: rgba(255, 139, 94, 0.55);
+    box-shadow: 0 0 0 3px rgba(255, 139, 94, 0.16);
+    background: rgba(255, 255, 255, 0.7);
   }
   .brutal-label {
-    @apply block text-xs font-bold uppercase tracking-widest text-ink-soft mb-1;
+    @apply block text-xs font-bold uppercase tracking-widest text-ink-soft mb-1.5;
   }
   .eyebrow {
-    @apply font-brutal text-xs uppercase tracking-[0.32em] text-accent-deep;
+    @apply font-sans text-xs uppercase tracking-[0.32em] text-accent-deep font-bold;
   }
   .section-title {
-    @apply font-brutal text-3xl md:text-5xl font-extrabold text-ink leading-tight;
+    @apply font-sans text-3xl md:text-5xl font-extrabold text-ink leading-tight;
+  }
+  /* Glass divider + subtle hairlines */
+  .glass-hairline {
+    border-color: rgba(42, 38, 34, 0.08);
   }
 
   /* ── Wedding template aesthetic (renderer) ─────────────────── */

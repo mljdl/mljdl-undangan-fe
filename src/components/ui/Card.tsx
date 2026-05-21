@@ -17,7 +17,7 @@ export const Card = ({
       'brutal-card',
       padded ? 'p-6' : '',
       hoverable
-        ? 'transition-all duration-150 hover:-translate-y-0.5 hover:shadow-brutal-lg'
+        ? 'transition-all duration-300 hover:-translate-y-1 hover:bg-white/70 hover:shadow-[0_18px_44px_rgba(42,38,34,0.16)]'
         : '',
       className,
     ]
